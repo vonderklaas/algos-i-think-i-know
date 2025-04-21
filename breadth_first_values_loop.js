@@ -21,6 +21,11 @@ b.left = d
 b.right = e
 c.right = f
 
+/**
+ * Strategy: Explore all nodes at the current level before moving to the next level.
+ * Data Structure Used: Queue (FIFO) 
+ */
+
 const breadthFirstValues = (root) => {
 
     if (!root) return [];

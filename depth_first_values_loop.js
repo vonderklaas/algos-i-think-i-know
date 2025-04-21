@@ -21,6 +21,11 @@ b.left = d
 b.right = e
 c.right = f
 
+/**
+ * Strategy: Dive as deep as possible down one branch before backtracking.
+ * Data Structure Used: Stack (LIFO) — either explicitly like in your code, or implicitly via recursion.
+ */
+
 const depthFirstValues = (root) => {
 
     if (!root) return []
