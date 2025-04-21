@@ -26,27 +26,29 @@ c.right = f
  * Data Structure Used: Stack (LIFO) — either explicitly like in your code, or implicitly via recursion.
  */
 
-const depthFirstValues = (root) => {
+const breadthFirstSearch = (root, target) => {
 
-    if (!root) return []
+    if (!root) return false;
 
-    const values = []
-    const stack = [root]
+    const queue = [root]
 
-    while (stack.length > 0) {
-        const current = stack.pop()
-        values.push(current.val)
-
-        if (current.right) {
-            stack.push(current.right)
+    while (queue.length > 0) {
+        const current = queue.shift()
+        if (current.val == target) {
+            return true
         }
+
         if (current.left) {
-            stack.push(current.left)
+            queue.push(current.left)
+        }
+        if (current.right) {
+            queue.push(current.right)
         }
     }
 
-    return values;
+    return false
+
 }
 
-const values = depthFirstValues(a)
-console.log(`values:`, values)
+const values = breadthFirstSearch(a, "E")
+console.log(`tree includes:`, values)
