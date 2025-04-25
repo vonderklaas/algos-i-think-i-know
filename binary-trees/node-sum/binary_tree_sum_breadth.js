@@ -1,6 +1,6 @@
-import a from "./utils/nodes.js";
+import a from "../utils/char_nodes";
 
-const treeSum = (root) => {
+const binaryTreeSumBreadth = (root) => {
   if (!root) return 0;
 
   let totalSum = 0;
@@ -22,5 +22,5 @@ const treeSum = (root) => {
   return totalSum;
 };
 
-const sum = treeSum(a);
+const sum = binaryTreeSumBreadth(a);
 console.log(`sum:`, sum);

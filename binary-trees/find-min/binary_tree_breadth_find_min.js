@@ -1,6 +1,6 @@
 import a from "./utils/int_nodes.js";
 
-const treeMinValue = (root) => {
+const binaryTreeBreadthFindMind = (root) => {
   let minValue = Infinity;
   const queue = [root];
 
@@ -18,5 +18,5 @@ const treeMinValue = (root) => {
   return minValue;
 };
 
-const min = treeMinValue(a);
+const min = binaryTreeBreadthFindMind(a);
 console.log(`min:`, min);

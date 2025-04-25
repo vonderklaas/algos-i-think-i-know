@@ -1,6 +1,6 @@
-import a from "./nodes.js";
+import a from "../utils/char_nodes";
 
-const breadthFirstSearch = (root, target) => {
+const binaryTreeBreadthSearch = (root, target) => {
   if (!root) return false;
 
   const queue = [root];
@@ -22,5 +22,5 @@ const breadthFirstSearch = (root, target) => {
   return false;
 };
 
-const values = breadthFirstSearch(a, "E");
+const values = binaryTreeBreadthSearch(a, "E");
 console.log(`tree includes:`, values);

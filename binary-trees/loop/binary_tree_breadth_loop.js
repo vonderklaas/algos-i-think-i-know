@@ -1,6 +1,6 @@
-import a from "./nodes.js";
+import a from "../utils/char_nodes";
 
-const breadthFirstValues = (root) => {
+const binaryTreeBreadthLoop = (root) => {
   if (!root) return [];
 
   const values = [];
@@ -22,5 +22,5 @@ const breadthFirstValues = (root) => {
   return values;
 };
 
-const values = breadthFirstValues(a);
+const values = binaryTreeBreadthLoop(a);
 console.log(`values:`, values);

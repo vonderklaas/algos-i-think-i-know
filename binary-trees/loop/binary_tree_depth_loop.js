@@ -1,6 +1,6 @@
-import a from "./nodes.js";
+import a from "../utils/char_nodes";
 
-const depthFirstValues = (root) => {
+const binaryTreeDepthLoop = (root) => {
   if (!root) return [];
 
   const values = [];
@@ -21,5 +21,5 @@ const depthFirstValues = (root) => {
   return values;
 };
 
-const values = depthFirstValues(a);
+const values = binaryTreeDepthLoop(a);
 console.log(`values:`, values);
