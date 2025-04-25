@@ -1,54 +1,26 @@
-class Node {
-    constructor(val) {
-        this.val = val
-        this.left = null
-        this.right = null
-    }
-}
-
-// Create nodes
-const a = new Node("A")
-const b = new Node("B")
-const c = new Node("C")
-const d = new Node("D")
-const e = new Node("E")
-const f = new Node("F")
-
-// Connections
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.right = f
-
-/**
- * Strategy: Dive as deep as possible down one branch before backtracking.
- * Data Structure Used: Stack (LIFO) — either explicitly like in your code, or implicitly via recursion.
- */
+import a from "./nodes.js";
 
 const breadthFirstSearch = (root, target) => {
+  if (!root) return false;
 
-    if (!root) return false;
+  const queue = [root];
 
-    const queue = [root]
-
-    while (queue.length > 0) {
-        const current = queue.shift()
-        if (current.val == target) {
-            return true
-        }
-
-        if (current.left) {
-            queue.push(current.left)
-        }
-        if (current.right) {
-            queue.push(current.right)
-        }
+  while (queue.length > 0) {
+    const current = queue.shift();
+    if (current.val == target) {
+      return true;
     }
 
-    return false
+    if (current.left) {
+      queue.push(current.left);
+    }
+    if (current.right) {
+      queue.push(current.right);
+    }
+  }
 
-}
+  return false;
+};
 
-const values = breadthFirstSearch(a, "E")
-console.log(`tree includes:`, values)
+const values = breadthFirstSearch(a, "E");
+console.log(`tree includes:`, values);

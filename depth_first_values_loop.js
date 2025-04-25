@@ -1,52 +1,25 @@
-class Node {
-    constructor(val) {
-        this.val = val
-        this.left = null
-        this.right = null
-    }
-}
-
-// Create nodes
-const a = new Node("A")
-const b = new Node("B")
-const c = new Node("C")
-const d = new Node("D")
-const e = new Node("E")
-const f = new Node("F")
-
-// Connections
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.right = f
-
-/**
- * Strategy: Dive as deep as possible down one branch before backtracking.
- * Data Structure Used: Stack (LIFO) — either explicitly like in your code, or implicitly via recursion.
- */
+import a from "./nodes.js";
 
 const depthFirstValues = (root) => {
+  if (!root) return [];
 
-    if (!root) return []
+  const values = [];
+  const stack = [root];
 
-    const values = []
-    const stack = [root]
+  while (stack.length > 0) {
+    const current = stack.pop();
+    values.push(current.val);
 
-    while (stack.length > 0) {
-        const current = stack.pop()
-        values.push(current.val)
-
-        if (current.right) {
-            stack.push(current.right)
-        }
-        if (current.left) {
-            stack.push(current.left)
-        }
+    if (current.right) {
+      stack.push(current.right);
     }
+    if (current.left) {
+      stack.push(current.left);
+    }
+  }
 
-    return values;
-}
+  return values;
+};
 
-const values = depthFirstValues(a)
-console.log(`values:`, values)
+const values = depthFirstValues(a);
+console.log(`values:`, values);
